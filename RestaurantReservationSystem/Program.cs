@@ -36,10 +36,7 @@ namespace RestaurantReservationSystem
                 {
                     Console.WriteLine("Type your full name for you reservation");
                     checkRegister = Convert.ToString(Console.ReadLine());
-
-
                 }
-
              }
         }
     }
