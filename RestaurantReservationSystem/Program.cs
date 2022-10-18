@@ -13,7 +13,34 @@ namespace RestaurantReservationSystem
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //   0       1   2   3   4   5   6   7   8   9
+            string[] registeredUsers = new string[10] { "EDUARDO", "", "", "", "", "", "", "", "", "" };
+            int arrayCurrentIndex = 1;
+            string reservationCheck;
+            string newRegister;
+            string checkRegister;
+            Console.WriteLine("Welcome to best restaurant in the World!");
+            while (true)
+            {
+                Console.WriteLine("Are you already make your reservation? Y/N:");
+                reservationCheck = Convert.ToString(Console.ReadLine());
+
+                if (reservationCheck == "n" || reservationCheck == "N")
+                {
+                    Console.WriteLine("Type your name for making your reservation");
+                    newRegister = Console.ReadLine();
+                    registeredUsers[arrayCurrentIndex] = newRegister.ToUpper();
+                    arrayCurrentIndex++;
+                }
+                else if (reservationCheck == "y" || reservationCheck == "Y")
+                {
+                    Console.WriteLine("Type your full name for you reservation");
+                    checkRegister = Convert.ToString(Console.ReadLine());
+
+
+                }
+
+             }
         }
     }
 }
