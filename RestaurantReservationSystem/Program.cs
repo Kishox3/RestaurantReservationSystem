@@ -25,25 +25,21 @@ namespace RestaurantReservationSystem
                 reservationCheck = Convert.ToString(Console.ReadLine());
 
                 if (reservationCheck == "1")  //OPCION DE REGISTRO
-                {   
-                    
+                {       
                     Console.WriteLine("Type your name for making your reservation");
                     newRegister = Console.ReadLine();
-                    for (int i = 0; i < registeredUsers.Length; i++)
+                    int check = Array.IndexOf(registeredUsers, newRegister.ToUpper());
+                    Console.WriteLine(check);
+                    if (check >= 0) //VERIFICACION DE QUE NO EXISTA UNA RESERVA YA HECHA CON ESE NOMBRE
                     {
-                        if (registeredUsers[i].ToUpper() == newRegister.ToUpper()) //VERIFICACION DE QUE NO EXISTA UNA RESERVA YA HECHA CON ESE NOMBRE
-                        {
-                            Console.WriteLine("Already exist a registration with the name " + newRegister.ToUpper() + " on table #" + (i+1) + "\nTry a new registration with other name");
-                            break;
-                        }
-                        else  //SI NO EXISTE SE RESERVA LA MESA
-                        {
-                            registeredUsers[arrayCurrentIndex] = newRegister.ToUpper();
-                            arrayCurrentIndex++;
-                            Console.WriteLine("Registration complete! You have the table #" + (i+1));
-                            break;
-                        }
-                    };            
+                        Console.WriteLine("Already exist a registration with the name " + registeredUsers[check] + " on table #" + (check+1) + "\nTry a new registration with other name");
+                    }
+                    else  //SI NO EXISTE SE RESERVA LA MESA
+                    {
+                        registeredUsers[arrayCurrentIndex] = newRegister.ToUpper();
+                        arrayCurrentIndex++;
+                        Console.WriteLine("Registration complete! You have the table #" + (check+1));
+                    }
                 }
                 else if (reservationCheck == "2")
                 {
