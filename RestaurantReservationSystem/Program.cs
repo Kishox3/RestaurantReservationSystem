@@ -22,10 +22,10 @@ namespace RestaurantReservationSystem
             Console.WriteLine("Welcome to best restaurant in the World!");
             while (arrayCurrentIndex < 10)
             {
-                Console.WriteLine("Are you already make your reservation? Y/N:");
+                Console.WriteLine("Type [ 1 ] for making a reservation\nType [ 2 ] for check a reservation");
                 reservationCheck = Convert.ToString(Console.ReadLine());
 
-                if (reservationCheck == "n" || reservationCheck == "N")
+                if (reservationCheck == "1")
                 {   
                     
                     Console.WriteLine("Type your name for making your reservation");
@@ -39,7 +39,7 @@ namespace RestaurantReservationSystem
                     }
                                   
                 }
-                else if (reservationCheck == "y" || reservationCheck == "Y")
+                else if (reservationCheck == "2")
                 {
                     Console.WriteLine("Type your name for check you reservation");
                     checkRegister = Console.ReadLine();
@@ -48,6 +48,7 @@ namespace RestaurantReservationSystem
                         if (registeredUsers[i].ToUpper() == checkRegister.ToUpper())
                         {
                             Console.WriteLine(registeredUsers[i] + " you already have the table #" + (i+1));
+                            break;
                         }
                     };
                 }
