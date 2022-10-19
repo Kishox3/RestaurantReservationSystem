@@ -18,7 +18,7 @@ namespace RestaurantReservationSystem
             string reservationCheck;
             string newRegister;
             string checkRegister;
-            Console.WriteLine("Welcome to best restaurant in the World!");
+            Console.WriteLine("Welcome to Xion Restaurant | Table Registration System");
             while (arrayCurrentIndex < 10)
             {
                 Console.WriteLine("Type [ 1 ] for making a reservation\nType [ 2 ] for check a reservation\nType [ 3 ] to see the actual registration list");
